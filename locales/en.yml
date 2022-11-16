@@ -1,0 +1,44 @@
+not-found: Not found
+help:
+  how-to-use: How to use ?
+prompt:
+  prompt-Mac: Press ⌘+K to get helper
+  prompt-Win: Press Win+K to get helper
+  prompt-mobile: search some thing
+helper:
+  # Aggr
+  title: Aggr Helper
+  what-is-aggr: What is Aggr ?
+  About-aggr-name: is derived from the word aggregation
+  About-aggr-content: It aggregates multiple search engines to make searching easy
+  # How to use 
+  htu-title: How to use
+  htu-start: 'Specify the search engine and search content in the form of'
+  htu-formula: '[engine full name / abbr] [space] [content]'
+  htu-tab: 'Or press the'
+  htu-tab-end: key switching engine
+  # htu-content-en: Specify the search engine and search content in the form of
+  htu-content-cn: ''
+  htu-example: For example
+  htu-formula-example: " bi today's weather "
+  htu-like: is equivalent to searching for
+  htu-bing-cn: today's weather
+  htu-weather-cn: bing
+  # htu-bing-en: bing
+  htu-weather-en: today's weather
+  htu-in-en: in
+  # Index
+  Index-List: Index List
+  Index-List-formula: '[full name/abbr]'
+  Index-List-Search: Search engine
+  Index-List-Tool: Developer
+  Index-List-Media: Social media 
+  Index-List-URL: Or type in the URL address by index
+  #recent
+recent:
+  recent-title: Recent
+  recent-noRecent: No recent
+  recent-navigate: to navigate
+  recent-open: to open
+  recent-Close: to close
+  recent-clear: clear recent

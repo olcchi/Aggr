@@ -1,0 +1,44 @@
+not-found: 未找到页面
+help:
+  how-to-use: 如何使用 ?
+prompt:
+  prompt-Mac: 按下 ⌘+K 唤出使用手册
+  prompt-Win: 按下 Win+K 唤出使用手册
+  prompt-mobile: 搜点什么
+helper:
+  # Aggr 
+  title: Aggr 使用手册
+  what-is-aggr: Aggr是什么?
+  About-aggr-name: 源自单词aggregation(意为聚合)
+  About-aggr-content: 它聚合了多个搜索引擎,让你能够只需指定搜索引擎和搜索内容就能在相应的搜索引擎中进行搜索
+  # How to use
+  htu-title: 使用方式
+  htu-start: 以
+  htu-formula: '[搜索引擎简称 / 全称] [空格] [搜索内容]'
+  htu-tab: 或使用
+  htu-tab-end: 键切换搜索引擎
+  # htu-content-en: ''
+  htu-content-cn: 的形式指定搜索引擎和搜索内容
+  htu-example: 例如
+  htu-formula-example: ' bi 今日天气 '
+  htu-like: 等同于在
+  htu-bing-cn: bing
+  htu-weather-cn: 今日天气
+  # htu-bing-en: bing
+  htu-weather-en: today's weather
+  htu-in-en: 搜索
+  # Index
+  Index-List: 索引列表
+  Index-List-formula: '[全称/简称]'
+  Index-List-Search: 搜索引擎
+  Index-List-Tool: 开发者
+  Index-List-Media: 社交媒体
+  Index-List-URL: 或者你也可以输入URL地址,使用索引
+    #recent
+recent:
+  recent-title: 最近搜索记录
+  recent-noRecent: 无最近搜索记录
+  recent-navigate: 控制
+  recent-open: 前往
+  recent-Close: 关闭
+  recent-clear: 清除搜索记录
