@@ -49,7 +49,7 @@ const historySearch = (item: any) => {
 const inputBlur = () => {
   setTimeout(() => {
     searchHistory.value = false
-  }, 100)
+  }, 80)
   if (isMac())
     inputDom.value!.placeholder = t('prompt.prompt-Mac')
   if (isWin())
@@ -170,12 +170,8 @@ const { arrowright } = useMagicKeys({
   },
 })
 whenever(arrowright, () => {
-  if (listIndex.value) {
-    // engineName.value = SearchKey.value[listIndex.value - 1].engine
-    // searchUrl.value = SearchKey.value[listIndex.value - 1].searchUrl
-    // inputValue.value = SearchKey.value[listIndex.value - 1].query
+  if (listIndex.value)
     window.open(`${SearchKey.value[listIndex.value - 1].searchUrl}${SearchKey.value[listIndex.value - 1].query}`)
-  }
 })
 const mouseIn = (item: any) => {
   listIndex.value = item.selectNum
