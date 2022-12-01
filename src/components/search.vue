@@ -47,6 +47,9 @@ const historySearch = (item: any) => {
   window.open(`${item.searchUrl}${item.query}`)
 }
 const inputBlur = () => {
+  setTimeout(() => {
+    searchHistory.value = false
+  }, 100)
   if (isMac())
     inputDom.value!.placeholder = t('prompt.prompt-Mac')
   if (isWin())
