@@ -1,33 +1,42 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const SearchDetailOpen = ref(false)
-const ToolDetailOpen = ref(true)
-const MediaDetailOpen = ref(true)
+const DetailActiveNum = ref(1)
 const SearchDetailsDom = ref<HTMLDetailsElement | null>(null)
 const ToolDetailsDom = ref<HTMLDetailsElement | null>(null)
 const MediaDetailsDom = ref<HTMLDetailsElement | null>(null)
+
 const SearchDetailControl = () => {
-  SearchDetailOpen.value = SearchDetailsDom.value!.open
-  ToolDetailsDom.value!.open = false
-  MediaDetailsDom.value!.open = false
-  ToolDetailOpen.value = true
-  MediaDetailOpen.value = true
+  if (DetailActiveNum.value === 1)
+    DetailActiveNum.value = 0
+  else
+    DetailActiveNum.value = 1
 }
 const ToolDetailControl = () => {
-  ToolDetailOpen.value = ToolDetailsDom.value!.open
-  SearchDetailOpen.value = true
-  MediaDetailOpen.value = true
-  SearchDetailsDom.value!.open = false
-  MediaDetailsDom.value!.open = false
+  if (DetailActiveNum.value === 2)
+    DetailActiveNum.value = 0
+  else
+    DetailActiveNum.value = 2
 }
 const MediaDetailControl = () => {
-  MediaDetailOpen.value = MediaDetailsDom.value!.open
-  ToolDetailOpen.value = true
-  SearchDetailOpen.value = true
-  ToolDetailsDom.value!.open = false
-  SearchDetailsDom.value!.open = false
+  if (DetailActiveNum.value === 3)
+    DetailActiveNum.value = 0
+  else
+    DetailActiveNum.value = 3
 }
-
+watch(DetailActiveNum, () => {
+  if (DetailActiveNum.value === 1) {
+    MediaDetailsDom.value!.open = false
+    ToolDetailsDom.value!.open = false
+  }
+  if (DetailActiveNum.value === 2) {
+    SearchDetailsDom.value!.open = false
+    MediaDetailsDom.value!.open = false
+  }
+  if (DetailActiveNum.value === 3) {
+    ToolDetailsDom.value!.open = false
+    SearchDetailsDom.value!.open = false
+  }
+})
 onMounted(() => {
   SearchDetailsDom.value!.open = true
 })
@@ -36,8 +45,8 @@ onMounted(() => {
 <template>
   <details ref="SearchDetailsDom" text-xs @click="SearchDetailControl">
     <summary list-none flex items-center>
-      <i v-show="SearchDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
-      <i v-show="!SearchDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
+      <i v-show="(DetailActiveNum !== 1)" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
+      <i v-show="(DetailActiveNum === 1)" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
       <p dark:text-gray-200 text-black text-xs font-bold leading-8 cursor-pointer>
         {{ t('helper.Index-List-Search') }}
       </p>
@@ -71,8 +80,8 @@ onMounted(() => {
   </details>
   <details ref="ToolDetailsDom" text-xs @click="ToolDetailControl">
     <summary list-none flex items-center>
-      <i v-show="ToolDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
-      <i v-show="!ToolDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
+      <i v-show="(DetailActiveNum !== 2)" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
+      <i v-show="(DetailActiveNum === 2)" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
       <p dark:text-gray-200 text-black text-xs font-bold leading-8 cursor-pointer>
         {{ t('helper.Index-List-Tool') }}
       </p>
@@ -106,8 +115,8 @@ onMounted(() => {
   </details>
   <details ref="MediaDetailsDom" text-xs @click="MediaDetailControl">
     <summary list-none flex items-center>
-      <i v-show="MediaDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
-      <i v-show="!MediaDetailOpen" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
+      <i v-show="(DetailActiveNum !== 3)" bg-black dark:bg-gray-200 i-jam-chevron-right text-center />
+      <i v-show="(DetailActiveNum === 3)" bg-black dark:bg-gray-200 i-jam-chevron-down text-center />
       <p dark:text-gray-200 text-black text-xs font-bold leading-8 cursor-pointer>
         {{ t('helper.Index-List-Media') }}
       </p>
