@@ -4,6 +4,7 @@ import { searchEngineMap } from '../utils/searchEngine'
 import { isMac, isWin } from '~/utils/checkTargetSystem'
 const { t } = useI18n()
 const inputDom = ref<HTMLInputElement | null>(null)
+const recent = ref<HTMLDivElement | null>(null)
 const inputValue = ref('')
 const searchHistory = ref(false)
 const selextnum = ref(0)
@@ -11,6 +12,7 @@ const listIndex = ref(1)
 const filterKey = ref<any[]>([])
 const SearchKey = ref<any[]>([])
 const Norecent = ref(true)
+onClickOutside(recent, () => searchHistory.value = false)
 // search history
 const dynamicPlaceHolder = computed(() => {
   if (isMac())
@@ -206,7 +208,7 @@ const closeSearch = () => {
         Aggr
       </p>
     </div>
-    <section class="relative w-5/6 md:w-1/2 lg:w-2/5 2xl:w-1/4 " mb-20 mt-5>
+    <section ref="recent" class="relative w-5/6 md:w-1/2 lg:w-2/5 2xl:w-1/4 " mb-20 mt-5>
       <div mx-auto>
         <div class="transition-all relative w-full flex flex-col justify-center">
           <i :class="engineName" />
