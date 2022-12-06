@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// fixHeight
-const fixHeight = ref(`${window.innerHeight}px`)
 // use head
 useHead({
   title: 'Aggr',
@@ -22,5 +20,5 @@ useHead({
 </script>
 
 <template>
-  <RouterView :style="{ height: fixHeight }" />
+  <RouterView />
 </template>
