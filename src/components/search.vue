@@ -46,7 +46,9 @@ const inputFocus = () => {
   }
 }
 const historySearch = (item: any) => {
-  window.open(`${item.searchUrl}${item.query}`)
+  onMounted(() => {
+    window.open(`${item.searchUrl}${item.query}`)
+  })
 }
 const inputBlur = () => {
   if (isMac())
@@ -84,7 +86,9 @@ const handleInput = () => {
 // handle search
 const handleSearch = () => {
   if (query.value) {
-    window.open(`${searchUrl.value}${query.value}`)
+    onMounted(() => {
+      window.open(`${searchUrl.value}${query.value}`)
+    })
     // localStorage
     filterKey.value = SearchKey.value.filter((el) => {
       return !el.query.includes(query.value)
@@ -169,8 +173,11 @@ const { arrowright } = useMagicKeys({
   },
 })
 whenever(arrowright, () => {
-  if (listIndex.value)
-    window.open(`${SearchKey.value[listIndex.value - 1].searchUrl}${SearchKey.value[listIndex.value - 1].query}`)
+  if (listIndex.value) {
+    onMounted(() => {
+      window.open(`${SearchKey.value[listIndex.value - 1].searchUrl}${SearchKey.value[listIndex.value - 1].query}`)
+    })
+  }
 })
 const mouseIn = (item: any) => {
   listIndex.value = item.selectNum
