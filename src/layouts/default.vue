@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // fixHeight
-const fixHeight = ref(`${window.innerHeight}px`)
+const fixHeight = ref('100dvh')
 </script>
 
 <template>
