@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-// i18n
 const { t, availableLocales, locale } = useI18n()
 const locales = availableLocales
 locale.value = locales[2]
