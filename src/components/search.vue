@@ -12,7 +12,7 @@ const listIndex = ref(1)
 const filterKey = ref<any[]>([])
 const SearchKey = ref<any[]>([])
 const Norecent = ref(true)
-// onClickOutside(recent, () => searchHistory.value = false)
+onClickOutside(recent, () => searchHistory.value = false)
 // search history
 const dynamicPlaceHolder = computed(() => {
   if (isMac())
