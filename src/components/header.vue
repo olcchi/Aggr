@@ -17,7 +17,7 @@ const handleModal = () => {
 const { Escape } = useMagicKeys()
 const { meta_k, control_k } = useMagicKeys({
   passive: false,
-  onEventFired(e) {
+  onEventFired(e:any) {
     if (((e.ctrlKey || e.metaKey) && e.key === 'k') && e.type === 'keydown')
       e.preventDefault()
   },

@@ -116,7 +116,7 @@ watch(Escape, () => {
 // listen tab key
 const { tab } = useMagicKeys({
   passive: false,
-  onEventFired(e) {
+  onEventFired(e:any) {
     if (e.key === 'Tab' && e.type === 'keydown')
       e.preventDefault()
   },
@@ -141,7 +141,7 @@ whenever(tab, shortcutsHandleEngine)
 // up and down
 const { arrowdown } = useMagicKeys({
   passive: false,
-  onEventFired(e) {
+  onEventFired(e:any) {
     if (e.key === 'down' && e.type === 'keydown')
       e.preventDefault()
   },
@@ -152,7 +152,7 @@ whenever(arrowdown, () => {
 })
 const { arrowup } = useMagicKeys({
   passive: false,
-  onEventFired(e) {
+  onEventFired(e:any) {
     if (e.key === 'up' && e.type === 'keydown')
       e.preventDefault()
   },
@@ -163,7 +163,7 @@ whenever(arrowup, () => {
 })
 const { arrowright } = useMagicKeys({
   passive: false,
-  onEventFired(e) {
+  onEventFired(e:any) {
     if (e.key === 'right' && e.type === 'keydown')
       e.preventDefault()
   },
