@@ -7,12 +7,15 @@ const inputDom = ref<HTMLInputElement | null>(null)
 const recent = ref<HTMLDivElement | null>(null)
 const inputValue = ref('')
 const searchHistory = ref(false)
-const selextnum = ref(0)
+const selectNum = ref(0)
 const listIndex = ref(1)
 const filterKey = ref<any[]>([])
 const SearchKey = ref<any[]>([])
 const Norecent = ref(true)
-onClickOutside(recent, () => searchHistory.value = false)
+
+onClickOutside(recent, () => {
+  searchHistory.value = false
+})
 // search history
 const dynamicPlaceHolder = computed(() => {
   if (isMac())
@@ -89,7 +92,7 @@ const handleSearch = () => {
     filterKey.value = SearchKey.value.filter((el) => {
       return !el.query.includes(query.value)
     })
-    filterKey.value.unshift({ engine: engineName.value, query: query.value, selectNum: selextnum, searchUrl: searchUrl.value })
+    filterKey.value.unshift({ engine: engineName.value, query: query.value, selectNum, searchUrl: searchUrl.value })
     localStorage.setItem('Key', JSON.stringify(filterKey.value) as string)
   }
 }
