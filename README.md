@@ -1,7 +1,10 @@
 # **Aggr**
+### merge search engine
+
 <br/>
+
 <img src='public/Aggr.png'>
 
-### **[Online preview](https://aggr.ekar.site)**
+<br/>
 
-### merge search engine
+### **[Online preview](https://aggr.ekar.site)**
