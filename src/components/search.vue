@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getEngineObj, getEngineSymbol, getQuery } from '../utils/search'
-import { searchEngineMap } from '../utils/searchEngine'
+import { getEngineObj, getEngineSymbol, getQuery } from '~/utils/search'
+import { searchEngineMap } from '~/utils/searchEngine'
 import { isMac, isWin } from '~/utils/checkTargetSystem'
 const { t } = useI18n()
 const inputDom = ref<HTMLInputElement | null>(null)
