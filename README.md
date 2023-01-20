@@ -1,13 +1,8 @@
-# **Aggr**
-### merge search engine
-
-<br/>
-
+## **Aggr** <br> a merge search engine
 <img src='public/Aggr.png'>
 
-<br/>
+**[Online preview](https://aggr.ekar.site)**
 
-### **[Online preview](https://aggr.ekar.site)**
 
 ## License
 
