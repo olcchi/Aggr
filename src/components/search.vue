@@ -207,8 +207,8 @@ const closeSearch = () => {
 <template>
   <section flex flex-col justify-center items-center class="h-1/3">
     <div w-full text-4xl font-bold font-mono mx-auto text-center dark:text-gray-200>
-      <p pb-2 text-4xl md:text-4xl font-serif select-none>
-        Aggr
+      <p pb-2 text-4xl md:text-4xl font-serif select-none italic>
+        [Aggr]
       </p>
     </div>
     <section ref="recent" class="relative w-5/6 md:w-1/2 lg:w-2/5 2xl:w-1/4 " mb-20 mt-5>
